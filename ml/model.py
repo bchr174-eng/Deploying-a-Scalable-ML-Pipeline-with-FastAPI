@@ -76,13 +76,14 @@ def save_model(model, path):
     path : str
         Path to save pickle file.
     """
-    # TODO: implement the function
-    pass
+    with open(path, 'wb') as file:
+        pickle.dump(model, file)
 
 def load_model(path):
     """ Loads pickle file from `path` and returns it."""
-    # TODO: implement the function
-    pass
+    with open(path, 'rb') as file:
+        model = pickle.load(file)
+    return model
 
 
 def performance_on_categorical_slice(
