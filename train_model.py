@@ -12,7 +12,7 @@ from ml.model import (
     save_model,
     train_model,
 )
-# TODO: load the cencus.csv data
+
 project_path = r"\\wsl.localhost\Ubuntu-24.04\home\bob\Deploying-a-Scalable-ML-Pipeline-with-FastAPI"
 data_path = os.path.join(project_path, "data", "census.csv")
 print(data_path)
@@ -20,7 +20,7 @@ data = pd.read_csv(data_path)
 
 # TODO: split the provided data to have a train dataset and a test dataset
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
-train, test = None, None# Your code here
+train, test = train_test_split(data, test_size=0.20, random_state=42)
 
 # DO NOT MODIFY
 cat_features = [
@@ -40,6 +40,10 @@ X_train, y_train, encoder, lb = process_data(
     # use the train dataset 
     # use training=True
     # do not need to pass encoder and lb as input
+    train,
+    categorical_features=cat_features,
+    label="salary",
+    training=True,
     )
 
 X_test, y_test, _, _ = process_data(
