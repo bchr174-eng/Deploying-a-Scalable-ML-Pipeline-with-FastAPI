@@ -31,7 +31,7 @@ def test_data_processing():
     })
     # Mock label binning
     train, test = train_test_split(data, test_size=0.5)
-    X_train, y_train, _, _ = process_data(train, target='salary')
+    X_train, y_train, _, _ = process_data(train, label='salary')
 
     assert len(X_train) == 2
     assert isinstance(X_train, np.ndarray)
