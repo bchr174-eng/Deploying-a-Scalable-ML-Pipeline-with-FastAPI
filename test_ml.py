@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 #from sklearn.linear_model import LogisticRegression
 from ml.model import train_model, compute_model_metrics
 from ml.data import process_data
-
+from train_model import cat_features
 # TODO: implement the first test. Change the function name and input as needed
 def test_model_algorithm():
     """
@@ -31,8 +31,11 @@ def test_data_processing():
     })
     # Mock label binning
     train, test = train_test_split(data, test_size=0.5, random_state=42)
-    print("Training Sample:\n", train.head())
-    X_train, y_train, _, _ = process_data(train, label='salary')
+    print("Training Sample:\n", train.head())X_train, y_train, _, _ = process_data(
+        train, 
+        label='salary',
+        categorical_features=cat_features
+    )
 
     
     assert len(X_train) == 2
