@@ -2,6 +2,7 @@ import pytest
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
 #from sklearn.linear_model import LogisticRegression
 from ml.model import train_model, compute_model_metrics
 from ml.data import process_data
