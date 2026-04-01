@@ -33,7 +33,7 @@ def test_data_processing():
 
     # Mock label binning
     train, test = train_test_split(data, test_size=0.5, random_state=42)
-    print("Training Sample:\n", train.head())
+    #print("Training Sample:\n", train.head())
     X_train, y_train, _, _ = process_data(
         train, 
         label='salary',
