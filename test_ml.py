@@ -2,9 +2,9 @@ import pytest
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import LogisticRegression
-# Assuming these functions are in ml.py
-from ml import train_model, compute_model_metrics, process_data 
+#from sklearn.linear_model import LogisticRegression
+from ml.model import train_model, compute_model_metrics
+from ml.data import process_data
 
 # TODO: implement the first test. Change the function name and input as needed
 def test_model_algorithm():
