@@ -19,13 +19,20 @@ Preprocessing: Standard cleaning involved removing whitespace, handling missing 
 Metrics: Evaluated using Precision, Recall, and F1-score.
 Slicing: Performance is often analyzed across categorical "slices" (e.g., performance by education level or race) to identify potential biases.
 ## Metrics
-_Please include the metrics used and your model's performance on those metrics._
-Performance Overview: Based on benchmarks for the UCI Adult Dataset, a typical RandomForest implementation achieves:
+This repository provides concrete evaluation results from the current trained model and slice analysis outputs in `slice_output.txt`.
+Performance Overview:
 
-    Accuracy: Approximately 82% to 86%.
-    Precision: ~0.71.
-    Recall: ~0.76.
-    F1-Score: ~0.60 for the positive class (>50K) and ~0.88 for the negative class (<=50K).
+Overall test metrics (from model pipeline test split):
+
+    Precision: 0.74 (approx)
+    Recall: 0.66 (approx)
+    F1-Score: 0.69 (approx)
+
+Slice performance example (from categorical slicing on test data):
+
+    workclass: Private -> Precision 0.7376, Recall 0.6404, F1 0.6856
+    race: White -> Precision 0.7404, Recall 0.6373, F1 0.6850
+    sex: Male -> Precision 0.7445, Recall 0.6599, F1 0.6997
 ## Ethical Considerations
 Bias: The dataset contains historical data from 1994, which reflects social and economic biases of that era regarding race, gender, and occupation.
 Fairness: Using the "Slicing" method is critical for this project to ensure the model does not disproportionately underperform for specific demographic groups.
