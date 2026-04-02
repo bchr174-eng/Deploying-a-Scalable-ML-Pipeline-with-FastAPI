@@ -6,9 +6,9 @@ import requests
 r = requests.get("http://127.0.0.1:8000")
 
 # TODO: print the status code
-print(r.status_code)
+print(f"Status Code: {r.status_code}")
 # TODO: print the welcome message
-print(r.json().get("message", "No message found"))
+print(f"Result: {r.json().get('message')}")
 
 
 
@@ -33,6 +33,6 @@ data = {
 r = requests.post("http://127.0.0.1:8000", json=data)
 
 # TODO: print the status code
-print(r.status_code)
+print(f"Status Code: {r.status_code} Result: {r.json()}")
 # TODO: print the result
-print(r.json())
+print(f"Result: {r.json()}")
