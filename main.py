@@ -71,7 +71,7 @@ async def post_inference(data: Data):
         # do not need to pass lb as input
         data, 
         categorical_features=cat_features, 
-        training=False
+        training=False,
         encoder=encoder
     )
     _inference = model.predict(data_processed) # your code here to predict the result using data_processed
