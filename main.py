@@ -33,14 +33,14 @@ path = model_path = os.path.join("model", "model.pkl") # TODO: enter the path fo
 model = load_model(path)
 
 # TODO: create a RESTful API using FastAPI
-app = None # your code here
+app = FastAPI() # your code here
 
 # TODO: create a GET on the root giving a welcome message
 @app.get("/")
 async def get_root():
     """ Say hello!"""
-    # your code here
-    pass
+    return {"Result: Hello from the API!"}
+    
 
 
 # TODO: create a POST on a different path that does model inference
@@ -69,6 +69,9 @@ async def post_inference(data: Data):
         # use data as data input
         # use training = False
         # do not need to pass lb as input
+        data, 
+        categorical_features=cat_features, 
+        training=False
     )
     _inference = None # your code here to predict the result using data_processed
     return {"result": apply_label(_inference)}
